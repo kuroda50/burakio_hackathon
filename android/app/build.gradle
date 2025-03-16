@@ -9,7 +9,7 @@ android {
     namespace = "com.example.burakio2025"
     
     // Flutter SDKのバージョン情報を直接指定する
-    compileSdk = 33  // compileSdkVersionをFlutterのversionに合わせる（例：33）
+    compileSdk = 34  // compileSdkVersionをFlutterのversionに合わせる（例：33）
     ndkVersion = "21.4.7075529"  // 必要に応じて変更
 
     compileOptions {
@@ -24,7 +24,7 @@ android {
     defaultConfig {
         applicationId = "com.example.burakio2025"
         minSdk = 21  // minSdkVersionを直接指定（例：21）
-        targetSdk = 33  // targetSdkVersionを指定（例：33）
+        targetSdk = 34  // targetSdkVersionを指定（例：33）
         versionCode = 1  // バージョンコード（例：1）
         versionName = "1.0.0"  // バージョン名（例：1.0.0）
     }
