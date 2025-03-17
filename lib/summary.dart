@@ -1,12 +1,9 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:dart_openai/dart_openai.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'transcription.dart';
+import 'package:file_picker/file_picker.dart';
 
-void main() async {
-  runApp(const Summary());
-}
 
 class Summary extends StatefulWidget {
   const Summary({super.key});
@@ -20,7 +17,7 @@ class _SummaryState extends State<Summary> {
   Future<void> AIchat() async {
     await dotenv.load();
     OpenAI.apiKey = dotenv.env['OPENAI_API_KEY'] ?? '';
-    const prompt_summary = "下記の文章から「タイトル」「新機能や改善点」「タグ」を抽出し、日本語で出力してください";
+    const prompt_summary = "以下の文章を要約し、日本語で出力してください";
     final user_message =
         """ポインタやリスト構造を利用したデータ構造およびハッシュ法を理解し，双方向リストやリングバッファ，ハッシュの計算方法を説明できる．(知識・理解)
         木構造の基本および２分探索木や平衡木の原理を理解し，その動作を説明できる．(知識・理解)
@@ -50,27 +47,32 @@ class _SummaryState extends State<Summary> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("要約画面"),
-        ),
-        body: Padding(
-            padding: EdgeInsets.all(15),
-            child: Center(
-              child: Column(
-                children: [
-                  Text("ここにGPTのメッセージ"),
-                  ElevatedButton(
-                      onPressed: () {
-                        AIchat();
-                      },
-                      child: Text("要約する")),
-                      Text(text)
-                ],
-              ),
-            )),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("要約画面"),
       ),
+      body: Padding(
+          padding: EdgeInsets.all(15),
+          child: Center(
+            child: Column(
+              children: [
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Transcription()),
+                      );
+                    },
+                    child: Text("文字起こし画面へ")),
+                ElevatedButton(
+                    onPressed: () {
+                      AIchat();
+                    },
+                    child: Text("要約する")),
+                Text(text)
+              ],
+            ),
+          )),
     );
   }
 }
