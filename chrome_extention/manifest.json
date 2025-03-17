@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "簡単！タブ録音！",
+  "version": "1.0",
+  "description": "録音したいタブでボタンを押すだけで録音できます。",
+  "permissions": [
+    "tabCapture",
+    "downloads",
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.jpg",
+      "48": "icons/icon48.jpg",
+      "128": "icons/icon128.jpg"
+    }
+  }
+}
+
+  
