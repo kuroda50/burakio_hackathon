@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
+import 'summary.dart';
+
 void main() async {
   await dotenv.load();
   runApp(MyApp());
@@ -11,12 +13,28 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return MaterialApp(home: MyHome());
+  }
+}
+
+class MyHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         appBar: AppBar(title: Text('OpenAI API Test')),
-        body: Center(child: OpenAIChat()),
-      ),
-    );
+        body: Column(
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Summary()),
+                  );
+                },
+                child: Text("要約画面に移動する")),
+            Center(child: OpenAIChat()),
+          ],
+        ));
   }
 }
 

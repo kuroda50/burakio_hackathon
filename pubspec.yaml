@@ -15,6 +15,7 @@ dependencies:
   http: ^0.13.3
   flutter_dotenv: ^5.0.2
   cupertino_icons: ^1.0.8
+  dart_openai: ^3.0.0
 
 dev_dependencies:
   flutter_test:
