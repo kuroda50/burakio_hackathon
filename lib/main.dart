@@ -4,10 +4,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 void main() async {
-  // 環境変数の読み込み
   await dotenv.load();
-
-  // Flutterアプリの実行
   runApp(MyApp());
 }
 
