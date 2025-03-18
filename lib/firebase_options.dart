@@ -85,4 +85,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'burakio2025.firebasestorage.app',
     measurementId: 'G-4B75CPYB54',
   );
+
 }
