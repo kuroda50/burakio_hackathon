@@ -45,15 +45,12 @@ class _MyWidget2State extends State<MyWidget2> {
   }
 
   Future<Professor> getProfessor() async {
-    print("ここまで実行");
     DocumentSnapshot professorSnapshot =
         await db.collection("professors").doc(widget.professorId).get();
-    print("ここまで実行");
     Professor professorTemp = Professor(
         id: professorSnapshot.id,
         name: professorSnapshot["name"],
         scores: professorSnapshot["scores"].cast<int>());
-    print("ここまで実行2");
     return professorTemp;
   }
 
