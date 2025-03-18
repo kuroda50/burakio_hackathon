@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.burakio2025.app-mergeDebugResources-27:/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "com.example.burakio2025.app-mergeDebugResources-28:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
                     "source": "C:\\Users\\kokok\\.gradle\\caches\\transforms-3\\25303bfa731ad2ab17d3513b6410954f\\transformed\\core-1.13.1\\res\\values-en-rAU\\values-en-rAU.xml",

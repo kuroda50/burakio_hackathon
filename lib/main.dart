@@ -1,3 +1,4 @@
+import 'package:burakio2025/ai.dart';
 import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -152,6 +153,16 @@ class _MyWidgetState extends State<MyWidget> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MyWidget2(
+                                  professorId: "05ik3H18STsPVwDm8MmD")),
+                        );
+                      },
+                      child: Text("data")),
                   ElevatedButton(
                       onPressed: () {
                         filePick();
