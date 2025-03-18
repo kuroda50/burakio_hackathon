@@ -23,6 +23,7 @@ dependencies:
   cloud_firestore: ^5.6.5
   firebase_storage:
   path_provider:
+  process_run: ^1.0.0
 
 dev_dependencies:
   flutter_test:

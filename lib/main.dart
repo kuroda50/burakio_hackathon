@@ -1,17 +1,19 @@
 import 'package:burakio2025/ai.dart';
+import 'package:dart_openai/dart_openai.dart';
 
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // Firebase 初期化
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await dotenv.load();
+  OpenAI.apiKey = dotenv.env['OPENAI_API_KEY'] ?? '';
 
   runApp(const MyApp());
 }
@@ -87,8 +89,7 @@ class ProfessorsListScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            MyWidget2(professorId: id),
+                        builder: (context) => MyWidget2(professorId: id),
                       ),
                     );
                   },
