@@ -1,5 +1,3 @@
-// ignore_for_file: unused_import
-
 import 'dart:io';
 import 'color.dart';
 import 'prompt.dart';
@@ -10,10 +8,12 @@ import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:dart_openai/dart_openai.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:process_run/process_run.dart'; // 追加
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
@@ -145,18 +145,110 @@ class _MyWidget2State extends State<MyWidget2> {
   }
 
   Future<void> summarize() async {
-    if (allText == "") {
-      allText = await Transcription();
-    }
-    setState(() {
-      allText = allText;
-    });
+    String allText = await Transcription();
     print("文字全文： $allText");
     summarizedText = await summary(allText);
     print("要約した文： $summarizedText");
     setState(() {
       summarizedText = summarizedText;
     });
+    saveScore();
+  }
+
+  Future<void> analyzeAvatar(File avatarImageFile) async {
+    final apiKey = dotenv.env['GOOGLE_VISION_API_KEY'] ?? '';
+    final url = Uri.parse(
+        'https://vision.googleapis.com/v1/images:annotate?key=$apiKey');
+
+    // 画像ファイルをBase64に変換
+    final bytes = await avatarImageFile.readAsBytes();
+    final base64Image = base64Encode(bytes);
+
+    final requestBody = jsonEncode({
+      "requests": [
+        {
+          "image": {"content": base64Image},
+          "features": [
+            {"type": "FACE_DETECTION", "maxResults": 1}
+          ]
+        }
+      ]
+    });
+
+    try {
+      final response = await http.post(
+        url,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: requestBody,
+      );
+
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        print('✅ Vision API Response: $data');
+
+        final faceAnnotations = data['responses'][0]['faceAnnotations'];
+        if (faceAnnotations == null || faceAnnotations.isEmpty) {
+          print('😶 顔が検出されませんでした');
+          setState(() {
+            alertText = '顔が見つかりませんでした';
+          });
+          return;
+        }
+
+        final face = faceAnnotations[0];
+
+        // ここでは「joyLikelihood」「angerLikelihood」などを使って気難しさをざっくり推定！
+        final angerLikelihood = face['angerLikelihood'];
+        final joyLikelihood = face['joyLikelihood'];
+
+        // 独自の気難しさスコアを作る
+        String mood = '';
+        int score = 3; // デフォルト普通
+
+        if (angerLikelihood == 'VERY_LIKELY' || angerLikelihood == 'LIKELY') {
+          mood = 'かなり厳しそう';
+          score = 5;
+        } else if (angerLikelihood == 'POSSIBLE') {
+          mood = '少し厳しそう';
+          score = 4;
+        } else if (joyLikelihood == 'VERY_LIKELY' ||
+            joyLikelihood == 'LIKELY') {
+          mood = 'とても穏やかで優しそう';
+          score = 1;
+        } else {
+          mood = '普通、ニュートラル';
+          score = 3;
+        }
+
+        setState(() {
+          alertText = '気難しさ分析結果:\nスコア: $score / 5\n理由: $mood';
+        });
+      } else {
+        print('❌ Vision API エラー: ${response.statusCode}');
+        print(response.body);
+        setState(() {
+          alertText = 'Vision API エラー: ${response.statusCode}';
+        });
+      }
+    } catch (e) {
+      print('❌ Vision API 通信エラー: $e');
+      setState(() {
+        alertText = 'Vision API 通信エラー';
+      });
+    }
+  }
+
+  Future<void> saveScore() async {
+    RegExp regExp = RegExp(r'評価: *(\d)/5');
+    Match? match = regExp.firstMatch(summarizedText);
+    if (match != null) {
+      String? scoreText = match.group(0);
+      print("スコアが見つかりました: $scoreText");
+    } else {
+      print("一致する文がみつかりません");
+    }
   }
 
   Future<void> fetchProfileAndAvatar(String researcherName) async {
@@ -240,6 +332,44 @@ class _MyWidget2State extends State<MyWidget2> {
 
                 SizedBox(height: 24),
 
+                //気難しさ分析ボタン
+                ElevatedButton(
+                  onPressed: () async {
+                    if (avatarUrl.isNotEmpty) {
+                      setState(() {
+                        alertText = '画像を取得しています...';
+                      });
+
+                      try {
+                        // avatarUrlをFileに変換する
+                        final avatarFile = await urlToFile(avatarUrl);
+
+                        // analyzeAvatarにFileを渡す！
+                        await analyzeAvatar(avatarFile);
+                      } catch (e) {
+                        setState(() {
+                          alertText = '画像の取得に失敗しました: $e';
+                        });
+                      }
+                    } else {
+                      setState(() {
+                        alertText = "まずはアバター画像を取得してください！";
+                      });
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColor.buttonColor,
+                  ),
+                  child: Text(
+                    "気難しさを分析する",
+                    style: TextStyle(
+                      color: AppColor.subTextColor,
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: 16),
+
                 ElevatedButton(
                   onPressed: () {
                     if (file != null) {
@@ -279,7 +409,7 @@ class _MyWidget2State extends State<MyWidget2> {
                   ),
                 ),
 
-                SizedBox(height: 24),
+                SizedBox(height: 16),
 
                 // チェックボックス
                 SizedBox(
@@ -365,4 +495,12 @@ class Professor {
 
 void exampleFunction({required String path, required String researcherName}) {
   // 何かの例として残ってる関数
+}
+
+Future<File> urlToFile(String imageUrl) async {
+  final http.Response response = await http.get(Uri.parse(imageUrl));
+  final documentDirectory = await getTemporaryDirectory();
+  final file = File('${documentDirectory.path}/avatar.jpg');
+  file.writeAsBytesSync(response.bodyBytes);
+  return file;
 }
