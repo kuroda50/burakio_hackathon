@@ -62,7 +62,8 @@ class _MyWidget2State extends State<MyWidget2> {
   }
 
   Future<File> getFile(String fileId) async {
-    final storageRef = FirebaseStorage.instance.ref().child("audio/$fileId.webm");
+    final storageRef =
+        FirebaseStorage.instance.ref().child("audio/$fileId.webm");
 
     final tempDir = await getTemporaryDirectory();
     final tempFile = File('${tempDir.path}/temp_audio.webm');

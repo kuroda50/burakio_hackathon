@@ -206,6 +206,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "js",
+      "rootUri": "file:///C:/Users/kokok/AppData/Local/Pub/Cache/hosted/pub.dev/js-0.6.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "leak_tracker",
       "rootUri": "file:///C:/Users/kokok/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.5",
       "packageUri": "lib/",
@@ -392,7 +398,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2025-03-18T15:03:32.288941Z",
+  "generated": "2025-03-18T13:18:51.123912Z",
   "generator": "pub",
   "generatorVersion": "3.5.2",
   "flutterRoot": "file:///C:/src/flutter",
