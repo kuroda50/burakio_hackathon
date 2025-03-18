@@ -1,12 +1,18 @@
+// ignore_for_file: unused_import
+
 import 'dart:io';
 import 'color.dart';
 import 'prompt.dart';
-
+import 'firebase_options.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert'; // ← JSON デコードに使う
+import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:dart_openai/dart_openai.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:process_run/process_run.dart'; // 追加
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -22,7 +28,11 @@ class MyWidget2 extends StatefulWidget {
 }
 
 class _MyWidget2State extends State<MyWidget2> {
-  String summarizedText = "", fileName = "", alertText = "", allText = "";
+  String summarizedText = "",
+      fileName = "",
+      alertText = "",
+      profileUrl = "",
+      avatarUrl = "";
   File? file;
   bool? isTranscription, isLoading;
   bool isCheckedBusy = true,
@@ -30,9 +40,12 @@ class _MyWidget2State extends State<MyWidget2> {
       isCheckUnderstandability = false;
   Professor? professor;
 
+  @override
   void initState() {
     super.initState();
-    buildData();
+    Future.microtask(() async {
+      await buildData();
+    });
   }
 
   Future<void> buildData() async {
@@ -42,6 +55,7 @@ class _MyWidget2State extends State<MyWidget2> {
       professor = professor;
       file = tempFile;
     });
+    await fetchProfileAndAvatar(professor!.name);
   }
 
   Future<Professor> getProfessor() async {
@@ -90,13 +104,10 @@ class _MyWidget2State extends State<MyWidget2> {
     return transcription.text;
   }
 
-  Future<String> summary(
-    String inputText,
-  ) async {
+  Future<String> summary(String inputText) async {
     setState(() {
       isLoading = true;
     });
-    // ここにGPTとのやり取り
     OpenAIChatCompletionModel chatCompletion =
         await OpenAI.instance.chat.create(
       model: "gpt-4o",
@@ -148,120 +159,198 @@ class _MyWidget2State extends State<MyWidget2> {
     });
   }
 
+  Future<void> fetchProfileAndAvatar(String researcherName) async {
+    const flaskServerUrl = 'http://192.168.224.133:5000';
+    final endpoint = '$flaskServerUrl/get_avatar';
+
+    try {
+      print('🔗 Flaskサーバーへリクエスト開始: $endpoint');
+
+      final uri = Uri.parse('$endpoint?researcher_name=$researcherName');
+      final response = await http.get(uri);
+
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+
+        String avatarUrlFromServer = data['avatar_url'];
+        String profileUrlFromServer = data['profile_url'];
+
+        print('✅ アバターURL取得成功: $avatarUrlFromServer');
+        print('🔗 プロフィールURL取得成功: $profileUrlFromServer');
+
+        setState(() {
+          profileUrl = profileUrlFromServer;
+          avatarUrl = avatarUrlFromServer;
+        });
+      } else {
+        print('❌ エラー: ${response.statusCode} ${response.body}');
+      }
+    } catch (e) {
+      print('❌ 例外発生: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "シラバス要約",
-            style: TextStyle(
-              color: AppColor.subTextColor,
-            ),
+      appBar: AppBar(
+        title: Text(
+          "シラバス要約",
+          style: TextStyle(
+            color: AppColor.subTextColor,
           ),
-          backgroundColor: AppColor.mainColor,
         ),
-        body: Padding(
-          padding: EdgeInsets.all(16),
-          child: Center(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  professor != null ? Text(professor!.name) : Text("まだ取得してないよ"),
-                  ElevatedButton(
-                      onPressed: () {
-                        if (file != null) {
-                          alertText = "";
-                          summarize();
-                        } else {
-                          alertText = "ファイルを取得中です";
-                        }
-                        setState(() {
-                          alertText = alertText;
-                        });
-                      },
-                      child: Text(
-                        "要約/評価する",
-                        style: TextStyle(
-                          color: AppColor.subTextColor,
+        backgroundColor: AppColor.mainColor,
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                professor != null ? Text(professor!.name) : Text("まだ取得してないよ"),
+                SizedBox(height: 16),
+
+                // 🔽 追加：アバター画像表示
+                avatarUrl.isNotEmpty
+                    ? CircleAvatar(
+                        radius: 50,
+                        backgroundImage: NetworkImage(avatarUrl),
+                      )
+                    : const SizedBox.shrink(),
+
+                SizedBox(height: 16),
+
+                // プロフィールURL表示
+                profileUrl.isNotEmpty
+                    ? InkWell(
+                        onTap: () {
+                          // Webブラウザで開くなどの処理を追加してもOK！
+                          print("プロフィールURLをタップしました: $profileUrl");
+                        },
+                        child: Text(
+                          "プロフィールを見る",
+                          style: TextStyle(
+                            color: Colors.blue,
+                            decoration: TextDecoration.underline,
+                          ),
                         ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColor.buttonColor)),
-                  isTranscription == true
-                      ? Text("音声をテキストに変換中……")
-                      : const SizedBox.shrink(),
-                  isLoading == true
-                      ? Text("テキストを要約中……")
-                      : const SizedBox.shrink(),
-                  Text(
-                    alertText,
+                      )
+                    : const SizedBox.shrink(),
+
+                SizedBox(height: 24),
+
+                ElevatedButton(
+                  onPressed: () {
+                    if (file != null) {
+                      alertText = "";
+                      summarize();
+                    } else {
+                      alertText = "ファイルを取得中です";
+                    }
+                    setState(() {
+                      alertText = alertText;
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColor.buttonColor,
+                  ),
+                  child: Text(
+                    "要約/評価する",
                     style: TextStyle(
-                      color: AppColor.errorColor,
+                      color: AppColor.subTextColor,
                     ),
                   ),
-                  SizedBox(
-                    width: 300,
-                    child: CheckboxListTile(
-                      title: const Text("簡単に"),
-                      subtitle: const Text("簡潔で短く要約します"),
-                      secondary: const Icon(Icons.thumb_up),
-                      value: isCheckedBusy,
-                      onChanged: (value) {
-                        if (value == null) return;
-                        setState(() {
-                          isCheckedBusy = true;
-                          isCheckedDetailed = false;
-                          isCheckUnderstandability = false;
-                        });
-                      },
-                    ),
+                ),
+
+                SizedBox(height: 16),
+
+                isTranscription == true
+                    ? Text("音声をテキストに変換中……")
+                    : const SizedBox.shrink(),
+                isLoading == true
+                    ? Text("テキストを要約中……")
+                    : const SizedBox.shrink(),
+
+                Text(
+                  alertText,
+                  style: TextStyle(
+                    color: AppColor.errorColor,
                   ),
-                  SizedBox(
-                    width: 300,
-                    child: CheckboxListTile(
-                      title: const Text("詳しく"),
-                      subtitle: const Text("詳しい部分まで要約します"),
-                      secondary: const Icon(Icons.article),
-                      value: isCheckedDetailed,
-                      onChanged: (value) {
-                        if (value == null) return;
-                        setState(() {
-                          isCheckedBusy = false;
-                          isCheckedDetailed = true;
-                          isCheckUnderstandability = false;
-                        });
-                      },
-                    ),
+                ),
+
+                SizedBox(height: 24),
+
+                // チェックボックス
+                SizedBox(
+                  width: 300,
+                  child: CheckboxListTile(
+                    title: const Text("簡単に"),
+                    subtitle: const Text("簡潔で短く要約します"),
+                    secondary: const Icon(Icons.thumb_up),
+                    value: isCheckedBusy,
+                    onChanged: (value) {
+                      if (value == null) return;
+                      setState(() {
+                        isCheckedBusy = true;
+                        isCheckedDetailed = false;
+                        isCheckUnderstandability = false;
+                      });
+                    },
                   ),
-                  SizedBox(
-                    width: 300,
-                    child: CheckboxListTile(
-                      title: const Text("わかりやすさ"),
-                      subtitle: const Text("授業のわかりやすさを評価します"),
-                      secondary: const Icon(Icons.lightbulb_circle_outlined),
-                      value: isCheckUnderstandability,
-                      onChanged: (value) {
-                        if (value == null) return;
-                        setState(() {
-                          isCheckedDetailed = false;
-                          isCheckedBusy = false;
-                          isCheckUnderstandability = true;
-                        });
-                      },
-                    ),
+                ),
+                SizedBox(
+                  width: 300,
+                  child: CheckboxListTile(
+                    title: const Text("詳しく"),
+                    subtitle: const Text("詳しい部分まで要約します"),
+                    secondary: const Icon(Icons.article),
+                    value: isCheckedDetailed,
+                    onChanged: (value) {
+                      if (value == null) return;
+                      setState(() {
+                        isCheckedBusy = false;
+                        isCheckedDetailed = true;
+                        isCheckUnderstandability = false;
+                      });
+                    },
                   ),
-                  MarkdownBody(
-                    data: summarizedText,
-                    softLineBreak: true,
-                  )
-                ],
-              ),
+                ),
+                SizedBox(
+                  width: 300,
+                  child: CheckboxListTile(
+                    title: const Text("わかりやすさ"),
+                    subtitle: const Text("授業のわかりやすさを評価します"),
+                    secondary: const Icon(Icons.lightbulb_circle_outlined),
+                    value: isCheckUnderstandability,
+                    onChanged: (value) {
+                      if (value == null) return;
+                      setState(() {
+                        isCheckedDetailed = false;
+                        isCheckedBusy = false;
+                        isCheckUnderstandability = true;
+                      });
+                    },
+                  ),
+                ),
+
+                SizedBox(height: 24),
+
+                // 要約されたMarkdownテキスト
+                MarkdownBody(
+                  data: summarizedText,
+                  softLineBreak: true,
+                ),
+              ],
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
 
+// Professorモデル
 class Professor {
   String id;
   String name;
@@ -272,4 +361,8 @@ class Professor {
     required this.name,
     required this.scores,
   });
+}
+
+void exampleFunction({required String path, required String researcherName}) {
+  // 何かの例として残ってる関数
 }

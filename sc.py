@@ -1,25 +1,23 @@
 import requests
 from bs4 import BeautifulSoup
 import urllib.parse
-import time
-import re  # 正規表現モジュール追加
+import re
 
 def search_profile_url(name):
+    """
+    研究者名からプロフィールURLを検索する
+    """
     # URLエンコード
     encoded_name = urllib.parse.quote(name)
-    
-    # 福岡大学固定
-    affiliation = urllib.parse.quote('福岡大学')
-    
-    # 検索URL生成
+    affiliation = urllib.parse.quote('福岡大学')  # 固定ならここで指定
     search_url = f'https://researchmap.jp/researchers?name={encoded_name}&affiliation={affiliation}'
-    print(f'\n検索URL: {search_url}\n')
+    
+    print(f'検索URL: {search_url}')
 
     headers = {
         'User-Agent': 'Mozilla/5.0'
     }
 
-    # 検索結果ページ取得
     response = requests.get(search_url, headers=headers)
 
     if response.status_code != 200:
@@ -27,20 +25,14 @@ def search_profile_url(name):
         return None
 
     soup = BeautifulSoup(response.text, 'html.parser')
-
-    # aタグの一覧を取得
     links = soup.find_all('a', href=True)
 
     profile_link_tag = None
     
     for link in links:
         href = link['href']
-        
-        # 条件1: '/' で始まるリンク
-        # 条件2: パスが "researchers" じゃない（検索ページのリンクと混同しないため）
-        # 条件3: 正規表現でユーザーID形式（英数字）を検出（例: /jh6vjm）
+        # パターンに合うリンクを探す
         if href.startswith('/') and not href.startswith('/researchers'):
-            # ユーザーIDっぽい形式の確認
             if re.fullmatch(r'/[a-zA-Z0-9_-]+', href):
                 profile_link_tag = href
                 break
@@ -53,8 +45,10 @@ def search_profile_url(name):
         print('プロフィールページが見つかりませんでした')
         return None
 
-
-def download_avatar(profile_url, researcher_name):
+def find_avatar_url(profile_url):
+    """
+    プロフィールページからアバター画像URLを取得する
+    """
     headers = {
         'User-Agent': 'Mozilla/5.0'
     }
@@ -63,17 +57,14 @@ def download_avatar(profile_url, researcher_name):
 
     if response.status_code != 200:
         print('プロフィールページ取得失敗:', response.status_code)
-        return
+        return None
 
     soup = BeautifulSoup(response.text, 'html.parser')
-
-    # imgタグの中からアバター画像を探す
     img_tags = soup.find_all('img')
     
     avatar_url = None
     for img in img_tags:
         img_src = img.get('src')
-        # "avatar" が含まれている画像URLを探す
         if img_src and 'avatar' in img_src:
             if img_src.startswith('/'):
                 avatar_url = 'https://researchmap.jp' + img_src
@@ -84,33 +75,19 @@ def download_avatar(profile_url, researcher_name):
 
     if not avatar_url:
         print('アバター画像が見つかりませんでした')
-        return
 
-    # 画像をダウンロードして保存
-    img_response = requests.get(avatar_url)
-    if img_response.status_code == 200:
-        filename = researcher_name.replace(' ', '_') + '_avatar.jpg'
-        with open(filename, 'wb') as f:
-            f.write(img_response.content)
-        print(f'{filename} を保存しました！')
-    else:
-        print('画像取得失敗:', img_response.status_code)
+    return avatar_url
 
-
+# テスト実行用
 if __name__ == '__main__':
-    researcher_name = input('研究者の名前を入力してください（例: 末次 正）: ')
-    
-    profile_url = search_profile_url(researcher_name)
+    import sys
 
-    if profile_url:
-        time.sleep(1)
-        download_avatar(profile_url, researcher_name)
+    if len(sys.argv) > 1:
+        researcher_name = sys.argv[1]
+        profile_url = search_profile_url(researcher_name)
+        avatar_url = find_avatar_url(profile_url) if profile_url else None
 
-
-
-
-
-
-
-
-
+        print(f'プロフィールURL: {profile_url}')
+        print(f'アバター画像URL: {avatar_url}')
+    else:
+        print("使い方: python sc.py '研究者名'")
