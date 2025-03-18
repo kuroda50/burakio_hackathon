@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "50808228839",
+    "project_id": "burakio2025",
+    "storage_bucket": "burakio2025.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50808228839:android:60628b5216e6d856644b42",
+        "android_client_info": {
+          "package_name": "com.example.burakio2025"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5UgIohkfxgWVrForrdVjmZLYr2GzO_Tw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

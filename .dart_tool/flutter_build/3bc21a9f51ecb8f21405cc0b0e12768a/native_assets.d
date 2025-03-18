@@ -1,0 +1,1 @@
+ C:\\Users\\kokok\\Development\\hackathon\\burakio2025\\burakio_hackathon\\.dart_tool\\flutter_build\\3bc21a9f51ecb8f21405cc0b0e12768a\\native_assets.yaml: 
