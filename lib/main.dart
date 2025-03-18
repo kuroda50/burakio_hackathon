@@ -89,7 +89,7 @@ class ProfessorsListScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            ProfessorDetailScreen(professorId: id),
+                            MyWidget2(professorId: id),
                       ),
                     );
                   },
