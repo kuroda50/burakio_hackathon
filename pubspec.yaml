@@ -16,8 +16,9 @@ dependencies:
   flutter_dotenv: ^5.0.2
   cupertino_icons: ^1.0.8
   dart_openai: ^3.0.0
-  path_provider: ^2.1.4
   file_picker: ^9.2.0
+  path: ^1.9.0
+  flutter_markdown: ^0.7.6+2
 
 dev_dependencies:
   flutter_test:
@@ -31,4 +32,3 @@ flutter:
   uses-material-design: true
   assets:
     - .env
-    - lib/audio/middle_sample.mp3
