@@ -105,7 +105,6 @@ if __name__ == '__main__':
     if profile_url:
         time.sleep(1)
         download_avatar(profile_url, researcher_name)
-折りたたむ
 
 
 

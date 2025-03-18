@@ -86,6 +86,24 @@
       "languageVersion": "3.4"
     },
     {
+      "name": "firebase_core",
+      "rootUri": "file:///C:/Users/kokok/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core-3.12.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "firebase_core_platform_interface",
+      "rootUri": "file:///C:/Users/kokok/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core_platform_interface-5.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "firebase_core_web",
+      "rootUri": "file:///C:/Users/kokok/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core_web-2.21.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///C:/src/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -284,7 +302,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2025-03-18T08:46:10.266816Z",
+  "generated": "2025-03-17T09:10:44.616387Z",
   "generator": "pub",
   "generatorVersion": "3.5.2",
   "flutterRoot": "file:///C:/src/flutter",
