@@ -10,12 +10,10 @@ import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:dart_openai/dart_openai.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:process_run/process_run.dart'; // 追加
 
-import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
@@ -147,25 +145,18 @@ class _MyWidget2State extends State<MyWidget2> {
   }
 
   Future<void> summarize() async {
-    String allText = await Transcription();
+    if (allText == "") {
+      allText = await Transcription();
+    }
+    setState(() {
+      allText = allText;
+    });
     print("文字全文： $allText");
     summarizedText = await summary(allText);
     print("要約した文： $summarizedText");
     setState(() {
       summarizedText = summarizedText;
     });
-    saveScore();
-  }
-
-  Future<void> saveScore() async {
-    RegExp regExp = RegExp(r'評価: *(\d)/5');
-    Match? match = regExp.firstMatch(summarizedText);
-    if (match != null) {
-      String? scoreText = match.group(0);
-      print("スコアが見つかりました: $scoreText");
-    } else {
-      print("一致する文がみつかりません");
-    }
   }
 
   Future<void> fetchProfileAndAvatar(String researcherName) async {

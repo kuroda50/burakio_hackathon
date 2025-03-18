@@ -1,5 +1,4 @@
 import 'package:burakio2025/ai.dart';
-import 'package:path/path.dart';
 
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';

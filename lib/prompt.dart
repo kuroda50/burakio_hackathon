@@ -19,7 +19,9 @@ class Prompt {
   static const promptSummaryUnderstandability = """
     Evaluate the following lecture’s clarity for students who are considering whether to take the class.
       ・Rate the clarity of the lecture on a scale of 1 to 5.
-      ・If the lecture is difficult to understand or has many spelling mistakes, give a lower rating.
+      ・If the lecture is difficult to understand, has many spelling mistakes, or is unnecessarily long-winded, give a lower rating.
+      ・Pay special attention to excessive length—if the lecture is overly verbose without adding meaningful value, reduce the score.
+      ・Likewise, if there are frequent spelling or grammatical errors, significantly lower the score.
       ・Focus on clarity, and do not worry about inaccuracies.
       ・Think in English but output in Japanese.
       ・必ず、以下の形式で出力してください。
