@@ -13,8 +13,8 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\android\app\src\main\AndroidManifest.xml:2:5-66
-15-->C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\android\app\src\main\AndroidManifest.xml:2:22-64
+15-->C:\Users\ketya\burakio_hackathon\android\app\src\main\AndroidManifest.xml:2:5-66
+15-->C:\Users\ketya\burakio_hackathon\android\app\src\main\AndroidManifest.xml:2:22-64
 16    <!--
 17     Required to query activities that can process text, see:
 18         https://developer.android.com/training/package-visibility and
@@ -23,48 +23,48 @@
 21         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
 22    -->
 23    <queries>
-23-->C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\android\app\src\main\AndroidManifest.xml:40:5-45:15
+23-->C:\Users\ketya\burakio_hackathon\android\app\src\main\AndroidManifest.xml:40:5-45:15
 24        <intent>
-24-->C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\android\app\src\main\AndroidManifest.xml:41:9-44:18
+24-->C:\Users\ketya\burakio_hackathon\android\app\src\main\AndroidManifest.xml:41:9-44:18
 25            <action android:name="android.intent.action.PROCESS_TEXT" />
-25-->C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\android\app\src\main\AndroidManifest.xml:42:13-72
-25-->C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\android\app\src\main\AndroidManifest.xml:42:21-70
+25-->C:\Users\ketya\burakio_hackathon\android\app\src\main\AndroidManifest.xml:42:13-72
+25-->C:\Users\ketya\burakio_hackathon\android\app\src\main\AndroidManifest.xml:42:21-70
 26
 27            <data android:mimeType="text/plain" />
-27-->C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\android\app\src\main\AndroidManifest.xml:43:13-50
-27-->C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\android\app\src\main\AndroidManifest.xml:43:19-48
+27-->C:\Users\ketya\burakio_hackathon\android\app\src\main\AndroidManifest.xml:43:13-50
+27-->C:\Users\ketya\burakio_hackathon\android\app\src\main\AndroidManifest.xml:43:19-48
 28        </intent>
 29        <intent>
-29-->[:file_picker] C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-12:18
+29-->[:file_picker] C:\Users\ketya\burakio_hackathon\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-12:18
 30            <action android:name="android.intent.action.GET_CONTENT" />
-30-->[:file_picker] C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-72
-30-->[:file_picker] C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:9:21-69
+30-->[:file_picker] C:\Users\ketya\burakio_hackathon\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-72
+30-->[:file_picker] C:\Users\ketya\burakio_hackathon\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:9:21-69
 31
 32            <data android:mimeType="*/*" />
-32-->C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\android\app\src\main\AndroidManifest.xml:43:13-50
-32-->C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\android\app\src\main\AndroidManifest.xml:43:19-48
+32-->C:\Users\ketya\burakio_hackathon\android\app\src\main\AndroidManifest.xml:43:13-50
+32-->C:\Users\ketya\burakio_hackathon\android\app\src\main\AndroidManifest.xml:43:19-48
 33        </intent>
 34    </queries> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 35    <!-- <uses-sdk android:minSdkVersion="21" /> -->
 36    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-36-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\kokok\.gradle\caches\transforms-3\8e640fbee19bac1e49ed8df43d47c2c7\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:10:5-79
-36-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\kokok\.gradle\caches\transforms-3\8e640fbee19bac1e49ed8df43d47c2c7\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:10:22-76
+36-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\ketya\.gradle\caches\transforms-3\63557dcab9d9f97214c52b9faa836099\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:10:5-79
+36-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\ketya\.gradle\caches\transforms-3\63557dcab9d9f97214c52b9faa836099\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:10:22-76
 37
 38    <permission
-38-->[androidx.core:core:1.13.1] C:\Users\kokok\.gradle\caches\transforms-3\25303bfa731ad2ab17d3513b6410954f\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+38-->[androidx.core:core:1.13.1] C:\Users\ketya\.gradle\caches\transforms-3\4c9be0c5e40b6223a158bac62b6e349b\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
 39        android:name="com.example.burakio2025.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-39-->[androidx.core:core:1.13.1] C:\Users\kokok\.gradle\caches\transforms-3\25303bfa731ad2ab17d3513b6410954f\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+39-->[androidx.core:core:1.13.1] C:\Users\ketya\.gradle\caches\transforms-3\4c9be0c5e40b6223a158bac62b6e349b\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
 40        android:protectionLevel="signature" />
-40-->[androidx.core:core:1.13.1] C:\Users\kokok\.gradle\caches\transforms-3\25303bfa731ad2ab17d3513b6410954f\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+40-->[androidx.core:core:1.13.1] C:\Users\ketya\.gradle\caches\transforms-3\4c9be0c5e40b6223a158bac62b6e349b\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
 41
 42    <uses-permission android:name="com.example.burakio2025.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-42-->[androidx.core:core:1.13.1] C:\Users\kokok\.gradle\caches\transforms-3\25303bfa731ad2ab17d3513b6410954f\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
-42-->[androidx.core:core:1.13.1] C:\Users\kokok\.gradle\caches\transforms-3\25303bfa731ad2ab17d3513b6410954f\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+42-->[androidx.core:core:1.13.1] C:\Users\ketya\.gradle\caches\transforms-3\4c9be0c5e40b6223a158bac62b6e349b\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+42-->[androidx.core:core:1.13.1] C:\Users\ketya\.gradle\caches\transforms-3\4c9be0c5e40b6223a158bac62b6e349b\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
 43
 44    <application
 45        android:name="android.app.Application"
 46        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-46-->[androidx.core:core:1.13.1] C:\Users\kokok\.gradle\caches\transforms-3\25303bfa731ad2ab17d3513b6410954f\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+46-->[androidx.core:core:1.13.1] C:\Users\ketya\.gradle\caches\transforms-3\4c9be0c5e40b6223a158bac62b6e349b\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 47        android:debuggable="true"
 48        android:extractNativeLibs="true"
 49        android:icon="@mipmap/ic_launcher"
@@ -104,180 +104,180 @@
 83            android:value="2" />
 84
 85        <service
-85-->[:cloud_firestore] C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-12:19
+85-->[:cloud_firestore] C:\Users\ketya\burakio_hackathon\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-12:19
 86            android:name="com.google.firebase.components.ComponentDiscoveryService"
-86-->[:cloud_firestore] C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:8:18-89
+86-->[:cloud_firestore] C:\Users\ketya\burakio_hackathon\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:8:18-89
 87            android:directBootAware="true"
-87-->[com.google.firebase:firebase-common:21.0.0] C:\Users\kokok\.gradle\caches\transforms-3\eca4333cb219929078e4b58375a8cccc\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+87-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ketya\.gradle\caches\transforms-3\14f04b88e86a2c0163e50059d38274cb\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:32:13-43
 88            android:exported="false" >
-88-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\kokok\.gradle\caches\transforms-3\8e640fbee19bac1e49ed8df43d47c2c7\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:16:13-37
+88-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\ketya\.gradle\caches\transforms-3\63557dcab9d9f97214c52b9faa836099\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:16:13-37
 89            <meta-data
-89-->[:cloud_firestore] C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
+89-->[:cloud_firestore] C:\Users\ketya\burakio_hackathon\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
 90                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-90-->[:cloud_firestore] C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-134
+90-->[:cloud_firestore] C:\Users\ketya\burakio_hackathon\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-134
 91                android:value="com.google.firebase.components.ComponentRegistrar" />
-91-->[:cloud_firestore] C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
+91-->[:cloud_firestore] C:\Users\ketya\burakio_hackathon\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
 92            <meta-data
-92-->[:firebase_storage] C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
+92-->[:firebase_storage] C:\Users\ketya\burakio_hackathon\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
 93                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-93-->[:firebase_storage] C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-126
+93-->[:firebase_storage] C:\Users\ketya\burakio_hackathon\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-126
 94                android:value="com.google.firebase.components.ComponentRegistrar" />
-94-->[:firebase_storage] C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
+94-->[:firebase_storage] C:\Users\ketya\burakio_hackathon\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
 95            <meta-data
-95-->[:firebase_core] C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
+95-->[:firebase_core] C:\Users\ketya\burakio_hackathon\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
 96                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-96-->[:firebase_core] C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
+96-->[:firebase_core] C:\Users\ketya\burakio_hackathon\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
 97                android:value="com.google.firebase.components.ComponentRegistrar" />
-97-->[:firebase_core] C:\Users\kokok\Development\hackathon\burakio2025\burakio_hackathon\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
+97-->[:firebase_core] C:\Users\ketya\burakio_hackathon\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
 98            <meta-data
-98-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\kokok\.gradle\caches\transforms-3\8e640fbee19bac1e49ed8df43d47c2c7\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:17:13-19:85
+98-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\ketya\.gradle\caches\transforms-3\63557dcab9d9f97214c52b9faa836099\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:17:13-19:85
 99                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
-99-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\kokok\.gradle\caches\transforms-3\8e640fbee19bac1e49ed8df43d47c2c7\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:18:17-122
+99-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\ketya\.gradle\caches\transforms-3\63557dcab9d9f97214c52b9faa836099\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:18:17-122
 100                android:value="com.google.firebase.components.ComponentRegistrar" />
-100-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\kokok\.gradle\caches\transforms-3\8e640fbee19bac1e49ed8df43d47c2c7\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:19:17-82
+100-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\ketya\.gradle\caches\transforms-3\63557dcab9d9f97214c52b9faa836099\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:19:17-82
 101            <meta-data
-101-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\kokok\.gradle\caches\transforms-3\8e640fbee19bac1e49ed8df43d47c2c7\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:20:13-22:85
+101-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\ketya\.gradle\caches\transforms-3\63557dcab9d9f97214c52b9faa836099\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:20:13-22:85
 102                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-102-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\kokok\.gradle\caches\transforms-3\8e640fbee19bac1e49ed8df43d47c2c7\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:21:17-111
+102-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\ketya\.gradle\caches\transforms-3\63557dcab9d9f97214c52b9faa836099\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:21:17-111
 103                android:value="com.google.firebase.components.ComponentRegistrar" />
-103-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\kokok\.gradle\caches\transforms-3\8e640fbee19bac1e49ed8df43d47c2c7\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:22:17-82
+103-->[com.google.firebase:firebase-firestore:25.1.2] C:\Users\ketya\.gradle\caches\transforms-3\63557dcab9d9f97214c52b9faa836099\transformed\jetified-firebase-firestore-25.1.2\AndroidManifest.xml:22:17-82
 104            <meta-data
-104-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\kokok\.gradle\caches\transforms-3\b7d09a31bdfc614b907fb2ebb8e5e707\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:30:13-32:85
+104-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\ketya\.gradle\caches\transforms-3\8fa74ed4c98e39c94a582f90cd61a025\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:30:13-32:85
 105                android:name="com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar"
-105-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\kokok\.gradle\caches\transforms-3\b7d09a31bdfc614b907fb2ebb8e5e707\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:31:17-118
+105-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\ketya\.gradle\caches\transforms-3\8fa74ed4c98e39c94a582f90cd61a025\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:31:17-118
 106                android:value="com.google.firebase.components.ComponentRegistrar" />
-106-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\kokok\.gradle\caches\transforms-3\b7d09a31bdfc614b907fb2ebb8e5e707\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:32:17-82
+106-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\ketya\.gradle\caches\transforms-3\8fa74ed4c98e39c94a582f90cd61a025\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:32:17-82
 107            <meta-data
-107-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\kokok\.gradle\caches\transforms-3\b7d09a31bdfc614b907fb2ebb8e5e707\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:33:13-35:85
+107-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\ketya\.gradle\caches\transforms-3\8fa74ed4c98e39c94a582f90cd61a025\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:33:13-35:85
 108                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-108-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\kokok\.gradle\caches\transforms-3\b7d09a31bdfc614b907fb2ebb8e5e707\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:34:17-107
+108-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\ketya\.gradle\caches\transforms-3\8fa74ed4c98e39c94a582f90cd61a025\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:34:17-107
 109                android:value="com.google.firebase.components.ComponentRegistrar" />
-109-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\kokok\.gradle\caches\transforms-3\b7d09a31bdfc614b907fb2ebb8e5e707\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:35:17-82
+109-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\ketya\.gradle\caches\transforms-3\8fa74ed4c98e39c94a582f90cd61a025\transformed\jetified-firebase-storage-21.0.1\AndroidManifest.xml:35:17-82
 110            <meta-data
-110-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\kokok\.gradle\caches\transforms-3\e50c7321e41bf38c50791a608848b9d0\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:25:13-27:85
+110-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ketya\.gradle\caches\transforms-3\40397b069e255fef43c8b4be8b220609\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:25:13-27:85
 111                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckKtxRegistrar"
-111-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\kokok\.gradle\caches\transforms-3\e50c7321e41bf38c50791a608848b9d0\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:26:17-120
+111-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ketya\.gradle\caches\transforms-3\40397b069e255fef43c8b4be8b220609\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:26:17-120
 112                android:value="com.google.firebase.components.ComponentRegistrar" />
-112-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\kokok\.gradle\caches\transforms-3\e50c7321e41bf38c50791a608848b9d0\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:27:17-82
+112-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ketya\.gradle\caches\transforms-3\40397b069e255fef43c8b4be8b220609\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:27:17-82
 113            <meta-data
-113-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\kokok\.gradle\caches\transforms-3\e50c7321e41bf38c50791a608848b9d0\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:28:13-30:85
+113-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ketya\.gradle\caches\transforms-3\40397b069e255fef43c8b4be8b220609\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:28:13-30:85
 114                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar"
-114-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\kokok\.gradle\caches\transforms-3\e50c7321e41bf38c50791a608848b9d0\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:29:17-117
+114-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ketya\.gradle\caches\transforms-3\40397b069e255fef43c8b4be8b220609\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:29:17-117
 115                android:value="com.google.firebase.components.ComponentRegistrar" />
-115-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\kokok\.gradle\caches\transforms-3\e50c7321e41bf38c50791a608848b9d0\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:30:17-82
+115-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ketya\.gradle\caches\transforms-3\40397b069e255fef43c8b4be8b220609\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:30:17-82
 116            <meta-data
-116-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\kokok\.gradle\caches\transforms-3\1e3e33bb5fb0d47da7b8574f0414b734\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+116-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ketya\.gradle\caches\transforms-3\0e372c99510389eb33dca1b846f27156\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
 117                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-117-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\kokok\.gradle\caches\transforms-3\1e3e33bb5fb0d47da7b8574f0414b734\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+117-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ketya\.gradle\caches\transforms-3\0e372c99510389eb33dca1b846f27156\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
 118                android:value="com.google.firebase.components.ComponentRegistrar" />
-118-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\kokok\.gradle\caches\transforms-3\1e3e33bb5fb0d47da7b8574f0414b734\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+118-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ketya\.gradle\caches\transforms-3\0e372c99510389eb33dca1b846f27156\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
 119            <meta-data
-119-->[com.google.firebase:firebase-common:21.0.0] C:\Users\kokok\.gradle\caches\transforms-3\eca4333cb219929078e4b58375a8cccc\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+119-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ketya\.gradle\caches\transforms-3\14f04b88e86a2c0163e50059d38274cb\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
 120                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-120-->[com.google.firebase:firebase-common:21.0.0] C:\Users\kokok\.gradle\caches\transforms-3\eca4333cb219929078e4b58375a8cccc\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+120-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ketya\.gradle\caches\transforms-3\14f04b88e86a2c0163e50059d38274cb\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:36:17-109
 121                android:value="com.google.firebase.components.ComponentRegistrar" />
-121-->[com.google.firebase:firebase-common:21.0.0] C:\Users\kokok\.gradle\caches\transforms-3\eca4333cb219929078e4b58375a8cccc\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+121-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ketya\.gradle\caches\transforms-3\14f04b88e86a2c0163e50059d38274cb\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:37:17-82
 122        </service>
 123
 124        <provider
-124-->[com.google.firebase:firebase-common:21.0.0] C:\Users\kokok\.gradle\caches\transforms-3\eca4333cb219929078e4b58375a8cccc\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+124-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ketya\.gradle\caches\transforms-3\14f04b88e86a2c0163e50059d38274cb\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
 125            android:name="com.google.firebase.provider.FirebaseInitProvider"
-125-->[com.google.firebase:firebase-common:21.0.0] C:\Users\kokok\.gradle\caches\transforms-3\eca4333cb219929078e4b58375a8cccc\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+125-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ketya\.gradle\caches\transforms-3\14f04b88e86a2c0163e50059d38274cb\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:24:13-77
 126            android:authorities="com.example.burakio2025.firebaseinitprovider"
-126-->[com.google.firebase:firebase-common:21.0.0] C:\Users\kokok\.gradle\caches\transforms-3\eca4333cb219929078e4b58375a8cccc\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+126-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ketya\.gradle\caches\transforms-3\14f04b88e86a2c0163e50059d38274cb\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:25:13-72
 127            android:directBootAware="true"
-127-->[com.google.firebase:firebase-common:21.0.0] C:\Users\kokok\.gradle\caches\transforms-3\eca4333cb219929078e4b58375a8cccc\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+127-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ketya\.gradle\caches\transforms-3\14f04b88e86a2c0163e50059d38274cb\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:26:13-43
 128            android:exported="false"
-128-->[com.google.firebase:firebase-common:21.0.0] C:\Users\kokok\.gradle\caches\transforms-3\eca4333cb219929078e4b58375a8cccc\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+128-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ketya\.gradle\caches\transforms-3\14f04b88e86a2c0163e50059d38274cb\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:27:13-37
 129            android:initOrder="100" />
-129-->[com.google.firebase:firebase-common:21.0.0] C:\Users\kokok\.gradle\caches\transforms-3\eca4333cb219929078e4b58375a8cccc\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+129-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ketya\.gradle\caches\transforms-3\14f04b88e86a2c0163e50059d38274cb\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:28:13-36
 130
 131        <uses-library
-131-->[androidx.window:window:1.2.0] C:\Users\kokok\.gradle\caches\transforms-3\aefb9ac74908ffdd3c190cdd84606721\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40
+131-->[androidx.window:window:1.2.0] C:\Users\ketya\.gradle\caches\transforms-3\fd0920998f6e3df2f2a8a66c6103c346\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40
 132            android:name="androidx.window.extensions"
-132-->[androidx.window:window:1.2.0] C:\Users\kokok\.gradle\caches\transforms-3\aefb9ac74908ffdd3c190cdd84606721\transformed\jetified-window-1.2.0\AndroidManifest.xml:24:13-54
+132-->[androidx.window:window:1.2.0] C:\Users\ketya\.gradle\caches\transforms-3\fd0920998f6e3df2f2a8a66c6103c346\transformed\jetified-window-1.2.0\AndroidManifest.xml:24:13-54
 133            android:required="false" />
-133-->[androidx.window:window:1.2.0] C:\Users\kokok\.gradle\caches\transforms-3\aefb9ac74908ffdd3c190cdd84606721\transformed\jetified-window-1.2.0\AndroidManifest.xml:25:13-37
+133-->[androidx.window:window:1.2.0] C:\Users\ketya\.gradle\caches\transforms-3\fd0920998f6e3df2f2a8a66c6103c346\transformed\jetified-window-1.2.0\AndroidManifest.xml:25:13-37
 134        <uses-library
-134-->[androidx.window:window:1.2.0] C:\Users\kokok\.gradle\caches\transforms-3\aefb9ac74908ffdd3c190cdd84606721\transformed\jetified-window-1.2.0\AndroidManifest.xml:26:9-28:40
+134-->[androidx.window:window:1.2.0] C:\Users\ketya\.gradle\caches\transforms-3\fd0920998f6e3df2f2a8a66c6103c346\transformed\jetified-window-1.2.0\AndroidManifest.xml:26:9-28:40
 135            android:name="androidx.window.sidecar"
-135-->[androidx.window:window:1.2.0] C:\Users\kokok\.gradle\caches\transforms-3\aefb9ac74908ffdd3c190cdd84606721\transformed\jetified-window-1.2.0\AndroidManifest.xml:27:13-51
+135-->[androidx.window:window:1.2.0] C:\Users\ketya\.gradle\caches\transforms-3\fd0920998f6e3df2f2a8a66c6103c346\transformed\jetified-window-1.2.0\AndroidManifest.xml:27:13-51
 136            android:required="false" />
-136-->[androidx.window:window:1.2.0] C:\Users\kokok\.gradle\caches\transforms-3\aefb9ac74908ffdd3c190cdd84606721\transformed\jetified-window-1.2.0\AndroidManifest.xml:28:13-37
+136-->[androidx.window:window:1.2.0] C:\Users\ketya\.gradle\caches\transforms-3\fd0920998f6e3df2f2a8a66c6103c346\transformed\jetified-window-1.2.0\AndroidManifest.xml:28:13-37
 137
 138        <activity
-138-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\kokok\.gradle\caches\transforms-3\0f6eed4ffdae34f0ec9794e1a0231c9a\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+138-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ketya\.gradle\caches\transforms-3\9720fa875d3f2ee58bd665d79a4dddb7\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
 139            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-139-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\kokok\.gradle\caches\transforms-3\0f6eed4ffdae34f0ec9794e1a0231c9a\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+139-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ketya\.gradle\caches\transforms-3\9720fa875d3f2ee58bd665d79a4dddb7\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:19-85
 140            android:exported="false"
-140-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\kokok\.gradle\caches\transforms-3\0f6eed4ffdae34f0ec9794e1a0231c9a\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+140-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ketya\.gradle\caches\transforms-3\9720fa875d3f2ee58bd665d79a4dddb7\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:22:19-43
 141            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-141-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\kokok\.gradle\caches\transforms-3\0f6eed4ffdae34f0ec9794e1a0231c9a\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+141-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ketya\.gradle\caches\transforms-3\9720fa875d3f2ee58bd665d79a4dddb7\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:21:19-78
 142
 143        <provider
-143-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\kokok\.gradle\caches\transforms-3\ae61ab4d014edf7aa82827a5683af671\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:24:9-32:20
+143-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ketya\.gradle\caches\transforms-3\2c67158c65f04ccd5257ce0d17d7cb05\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:24:9-32:20
 144            android:name="androidx.startup.InitializationProvider"
-144-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\kokok\.gradle\caches\transforms-3\ae61ab4d014edf7aa82827a5683af671\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:25:13-67
+144-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ketya\.gradle\caches\transforms-3\2c67158c65f04ccd5257ce0d17d7cb05\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:25:13-67
 145            android:authorities="com.example.burakio2025.androidx-startup"
-145-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\kokok\.gradle\caches\transforms-3\ae61ab4d014edf7aa82827a5683af671\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:26:13-68
+145-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ketya\.gradle\caches\transforms-3\2c67158c65f04ccd5257ce0d17d7cb05\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:26:13-68
 146            android:exported="false" >
-146-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\kokok\.gradle\caches\transforms-3\ae61ab4d014edf7aa82827a5683af671\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:27:13-37
+146-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ketya\.gradle\caches\transforms-3\2c67158c65f04ccd5257ce0d17d7cb05\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:27:13-37
 147            <meta-data
-147-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\kokok\.gradle\caches\transforms-3\ae61ab4d014edf7aa82827a5683af671\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+147-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ketya\.gradle\caches\transforms-3\2c67158c65f04ccd5257ce0d17d7cb05\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
 148                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-148-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\kokok\.gradle\caches\transforms-3\ae61ab4d014edf7aa82827a5683af671\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+148-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ketya\.gradle\caches\transforms-3\2c67158c65f04ccd5257ce0d17d7cb05\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
 149                android:value="androidx.startup" />
-149-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\kokok\.gradle\caches\transforms-3\ae61ab4d014edf7aa82827a5683af671\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+149-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ketya\.gradle\caches\transforms-3\2c67158c65f04ccd5257ce0d17d7cb05\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
 150            <meta-data
-150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
 151                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-151-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+151-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
 152                android:value="androidx.startup" />
-152-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+152-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
 153        </provider>
 154
 155        <meta-data
-155-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\kokok\.gradle\caches\transforms-3\c0acdb96f3544722b4ad61ef1c790068\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+155-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\ketya\.gradle\caches\transforms-3\e195532ecd16b1f656ccb83a416ac132\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
 156            android:name="com.google.android.gms.version"
-156-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\kokok\.gradle\caches\transforms-3\c0acdb96f3544722b4ad61ef1c790068\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+156-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\ketya\.gradle\caches\transforms-3\e195532ecd16b1f656ccb83a416ac132\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
 157            android:value="@integer/google_play_services_version" />
-157-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\kokok\.gradle\caches\transforms-3\c0acdb96f3544722b4ad61ef1c790068\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+157-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\ketya\.gradle\caches\transforms-3\e195532ecd16b1f656ccb83a416ac132\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
 158
 159        <receiver
-159-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+159-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
 160            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-160-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+160-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
 161            android:directBootAware="false"
-161-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+161-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
 162            android:enabled="true"
-162-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+162-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
 163            android:exported="true"
-163-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+163-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
 164            android:permission="android.permission.DUMP" >
-164-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+164-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
 165            <intent-filter>
-165-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+165-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
 166                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-166-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-166-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+166-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+166-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
 167            </intent-filter>
 168            <intent-filter>
-168-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+168-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
 169                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-169-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-169-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+169-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+169-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
 170            </intent-filter>
 171            <intent-filter>
-171-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+171-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
 172                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-172-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-172-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+172-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+172-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
 173            </intent-filter>
 174            <intent-filter>
-174-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+174-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
 175                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-175-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-175-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\kokok\.gradle\caches\transforms-3\90a73ae9e6e8f559121f9ee864303eeb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+175-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+175-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ketya\.gradle\caches\transforms-3\941315b7bc04a20b21f2594c6504e724\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
 176            </intent-filter>
 177        </receiver>
 178    </application>
