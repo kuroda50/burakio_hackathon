@@ -32,7 +32,8 @@ class _MyWidget2State extends State<MyWidget2> {
       fileName = "",
       alertText = "",
       profileUrl = "",
-      avatarUrl = "";
+      avatarUrl = "",
+      allText = "";
   File? file;
   bool? isTranscription, isLoading;
   bool isCheckedBusy = true,
@@ -59,15 +60,12 @@ class _MyWidget2State extends State<MyWidget2> {
   }
 
   Future<Professor> getProfessor() async {
-    print("ここまで実行");
     DocumentSnapshot professorSnapshot =
         await db.collection("professors").doc(widget.professorId).get();
-    print("ここまで実行");
     Professor professorTemp = Professor(
         id: professorSnapshot.id,
         name: professorSnapshot["name"],
         scores: professorSnapshot["scores"].cast<int>());
-    print("ここまで実行2");
     return professorTemp;
   }
 
@@ -145,7 +143,12 @@ class _MyWidget2State extends State<MyWidget2> {
   }
 
   Future<void> summarize() async {
-    String allText = await Transcription();
+    if (allText == "") {
+      allText = await Transcription();
+    }
+    setState(() {
+      allText = allText;
+    });
     print("文字全文： $allText");
     summarizedText = await summary(allText);
     print("要約した文： $summarizedText");
