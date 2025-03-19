@@ -4,7 +4,7 @@
             "outputFile": "com.example.burakio2025.app-mergeDebugResources-28:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\kokok\\Development\\hackathon\\burakio2025\\burakio_hackathon\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\ketya\\burakio_hackathon\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
