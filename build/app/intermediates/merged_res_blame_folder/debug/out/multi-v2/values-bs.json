@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.burakio2025.app-mergeDebugResources-28:/values-bs/values-bs.xml",
+            "outputFile": "com.example.burakio2025.app-mergeDebugResources-29:/values-bs/values-bs.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\kokok\\.gradle\\caches\\transforms-3\\cac28afea93d2d73d273caef0f52bc43\\transformed\\browser-1.8.0\\res\\values-bs\\values-bs.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,159,259,373",
+                        "endColumns": "103,99,113,99",
+                        "endOffsets": "154,254,368,468"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "2973,3077,3177,3291",
+                        "endColumns": "103,99,113,99",
+                        "endOffsets": "3072,3172,3286,3386"
+                    }
+                },
                 {
                     "source": "C:\\Users\\kokok\\.gradle\\caches\\transforms-3\\25303bfa731ad2ab17d3513b6410954f\\transformed\\core-1.13.1\\res\\values-bs\\values-bs.xml",
                     "from": {
@@ -13,11 +30,11 @@
                         "endOffsets": "148,250,348,452,556,658,775,876"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,153,255,353,457,561,663,2973",
+                        "startOffsets": "55,153,255,353,457,561,663,3391",
                         "endColumns": "97,101,97,103,103,101,116,100",
-                        "endOffsets": "148,250,348,452,556,658,775,3069"
+                        "endOffsets": "148,250,348,452,556,658,775,3487"
                     }
                 },
                 {

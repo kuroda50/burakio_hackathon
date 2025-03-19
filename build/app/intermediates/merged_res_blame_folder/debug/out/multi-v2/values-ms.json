@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.burakio2025.app-mergeDebugResources-28:/values-ms/values-ms.xml",
+            "outputFile": "com.example.burakio2025.app-mergeDebugResources-29:/values-ms/values-ms.xml",
             "map": [
                 {
                     "source": "C:\\Users\\kokok\\.gradle\\caches\\transforms-3\\c0acdb96f3544722b4ad61ef1c790068\\transformed\\jetified-play-services-basement-18.3.0\\res\\values-ms\\values.xml",
@@ -47,11 +47,28 @@
                         "endOffsets": "145,247,344,454,560,678,793,894"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,150,252,349,459,565,683,3154",
+                        "startOffsets": "55,150,252,349,459,565,683,3580",
                         "endColumns": "94,101,96,109,105,117,114,100",
-                        "endOffsets": "145,247,344,454,560,678,793,3250"
+                        "endOffsets": "145,247,344,454,560,678,793,3676"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\kokok\\.gradle\\caches\\transforms-3\\cac28afea93d2d73d273caef0f52bc43\\transformed\\browser-1.8.0\\res\\values-ms\\values-ms.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,160,260,379",
+                        "endColumns": "104,99,118,101",
+                        "endOffsets": "155,255,374,476"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3154,3259,3359,3478",
+                        "endColumns": "104,99,118,101",
+                        "endOffsets": "3254,3354,3473,3575"
                     }
                 }
             ]

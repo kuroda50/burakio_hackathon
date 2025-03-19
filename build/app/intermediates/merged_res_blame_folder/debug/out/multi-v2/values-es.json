@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.burakio2025.app-mergeDebugResources-28:/values-es/values-es.xml",
+            "outputFile": "com.example.burakio2025.app-mergeDebugResources-29:/values-es/values-es.xml",
             "map": [
                 {
                     "source": "C:\\Users\\kokok\\.gradle\\caches\\transforms-3\\0f6eed4ffdae34f0ec9794e1a0231c9a\\transformed\\jetified-play-services-base-18.1.0\\res\\values-es\\values.xml",
@@ -30,11 +30,11 @@
                         "endOffsets": "149,251,351,449,556,662,782,883"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,154,256,356,454,561,667,3124",
+                        "startOffsets": "55,154,256,356,454,561,667,3552",
                         "endColumns": "98,101,99,97,106,105,119,100",
-                        "endOffsets": "149,251,351,449,556,662,782,3220"
+                        "endOffsets": "149,251,351,449,556,662,782,3648"
                     }
                 },
                 {
@@ -52,6 +52,23 @@
                         "startOffsets": "1823",
                         "endColumns": "159",
                         "endOffsets": "1978"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\kokok\\.gradle\\caches\\transforms-3\\cac28afea93d2d73d273caef0f52bc43\\transformed\\browser-1.8.0\\res\\values-es\\values-es.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,162,263,378",
+                        "endColumns": "106,100,114,104",
+                        "endOffsets": "157,258,373,478"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3124,3231,3332,3447",
+                        "endColumns": "106,100,114,104",
+                        "endOffsets": "3226,3327,3442,3547"
                     }
                 }
             ]

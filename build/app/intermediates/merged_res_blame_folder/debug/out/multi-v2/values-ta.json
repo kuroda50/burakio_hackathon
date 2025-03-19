@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.burakio2025.app-mergeDebugResources-28:/values-ta/values-ta.xml",
+            "outputFile": "com.example.burakio2025.app-mergeDebugResources-29:/values-ta/values-ta.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\kokok\\.gradle\\caches\\transforms-3\\cac28afea93d2d73d273caef0f52bc43\\transformed\\browser-1.8.0\\res\\values-ta\\values-ta.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,172,274,381",
+                        "endColumns": "116,101,106,103",
+                        "endOffsets": "167,269,376,480"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3037,3154,3256,3363",
+                        "endColumns": "116,101,106,103",
+                        "endOffsets": "3149,3251,3358,3462"
+                    }
+                },
                 {
                     "source": "C:\\Users\\kokok\\.gradle\\caches\\transforms-3\\25303bfa731ad2ab17d3513b6410954f\\transformed\\core-1.13.1\\res\\values-ta\\values-ta.xml",
                     "from": {
@@ -13,11 +30,11 @@
                         "endOffsets": "146,249,348,446,553,668,796,897"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,151,254,353,451,558,673,3037",
+                        "startOffsets": "55,151,254,353,451,558,673,3467",
                         "endColumns": "95,102,98,97,106,114,127,100",
-                        "endOffsets": "146,249,348,446,553,668,796,3133"
+                        "endOffsets": "146,249,348,446,553,668,796,3563"
                     }
                 },
                 {

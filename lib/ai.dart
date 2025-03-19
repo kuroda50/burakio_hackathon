@@ -1,19 +1,15 @@
 import 'dart:io';
 import 'color.dart';
 import 'prompt.dart';
-import 'firebase_options.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert'; // ← JSON デコードに使う
-import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:dart_openai/dart_openai.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:process_run/process_run.dart'; // 追加
+import 'package:url_launcher/url_launcher.dart';
 
-import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
@@ -35,7 +31,7 @@ class _MyWidget2State extends State<MyWidget2> {
       avatarUrl = "",
       allText = "";
   File? file;
-  bool? isTranscription, isLoading;
+  bool? isTranscription, isLoading, isLoadingAvatar;
   bool isCheckedBusy = true,
       isCheckedDetailed = false,
       isCheckUnderstandability = false;
@@ -255,6 +251,9 @@ class _MyWidget2State extends State<MyWidget2> {
   }
 
   Future<void> fetchProfileAndAvatar(String researcherName) async {
+    setState(() {
+      isLoadingAvatar = true;
+    });
     const flaskServerUrl = 'http://192.168.224.133:5000';
     final endpoint = '$flaskServerUrl/get_avatar';
 
@@ -276,6 +275,7 @@ class _MyWidget2State extends State<MyWidget2> {
         setState(() {
           profileUrl = profileUrlFromServer;
           avatarUrl = avatarUrlFromServer;
+          isLoadingAvatar = false;
         });
       } else {
         print('❌ エラー: ${response.statusCode} ${response.body}');
@@ -303,25 +303,24 @@ class _MyWidget2State extends State<MyWidget2> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                professor != null ? Text(professor!.name) : Text("教授の情報を取得中……"),
-                SizedBox(height: 16),
-
                 // 🔽 追加：アバター画像表示
                 avatarUrl.isNotEmpty
                     ? CircleAvatar(
                         radius: 50,
                         backgroundImage: NetworkImage(avatarUrl),
                       )
-                    : const SizedBox.shrink(),
-
+                    : const Text("教授の顔写真を取得中……"),
+                professor != null ? Text(professor!.name) : Text("教授の情報を取得中……"),
                 SizedBox(height: 16),
 
                 // プロフィールURL表示
                 profileUrl.isNotEmpty
                     ? InkWell(
-                        onTap: () {
+                        onTap: () async{
                           // Webブラウザで開くなどの処理を追加してもOK！
                           print("プロフィールURLをタップしました: $profileUrl");
+                          final url = Uri.parse(profileUrl);
+                          await launchUrl(url, mode: LaunchMode.externalApplication);
                         },
                         child: Text(
                           "プロフィールを見る",
