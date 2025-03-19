@@ -300,7 +300,7 @@ class _MyWidget2State extends State<MyWidget2> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                professor != null ? Text(professor!.name) : Text("まだ取得してないよ"),
+                professor != null ? Text(professor!.name) : Text("教授の情報を取得中……"),
                 SizedBox(height: 16),
 
                 // 🔽 追加：アバター画像表示

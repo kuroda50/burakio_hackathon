@@ -1,4 +1,4 @@
-#Wed Mar 19 00:40:34 JST 2025
+#Wed Mar 19 08:18:07 JST 2025
 base.0=C\:\\Users\\kokok\\Development\\hackathon\\burakio2025\\burakio_hackathon\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\kokok\\Development\\hackathon\\burakio2025\\burakio_hackathon\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\kokok\\Development\\hackathon\\burakio2025\\burakio_hackathon\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

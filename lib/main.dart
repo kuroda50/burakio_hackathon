@@ -1,4 +1,5 @@
 import 'package:burakio2025/ai.dart';
+import 'color.dart';
 import 'package:dart_openai/dart_openai.dart';
 
 import 'package:flutter/material.dart';
@@ -46,7 +47,13 @@ class ProfessorsListScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('教授リスト（クラス順）'),
+        title: Text(
+          "授業一覧",
+          style: TextStyle(
+            color: AppColor.subTextColor,
+          ),
+        ),
+        backgroundColor: AppColor.mainColor,
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: professorsStream,
