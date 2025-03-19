@@ -1,19 +1,14 @@
 import 'dart:io';
 import 'color.dart';
 import 'prompt.dart';
-import 'firebase_options.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert'; // ← JSON デコードに使う
-import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:dart_openai/dart_openai.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:process_run/process_run.dart'; // 追加
 
-import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
@@ -32,7 +27,8 @@ class _MyWidget2State extends State<MyWidget2> {
       fileName = "",
       alertText = "",
       profileUrl = "",
-      avatarUrl = "";
+      avatarUrl = "",
+      allText = "";
   File? file;
   bool? isTranscription, isLoading;
   bool isCheckedBusy = true,
@@ -55,19 +51,16 @@ class _MyWidget2State extends State<MyWidget2> {
       professor = professor;
       file = tempFile;
     });
-    await fetchProfileAndAvatar(professor!.name);
+    // await fetchProfileAndAvatar(professor!.name);
   }
 
   Future<Professor> getProfessor() async {
-    print("ここまで実行");
     DocumentSnapshot professorSnapshot =
         await db.collection("professors").doc(widget.professorId).get();
-    print("ここまで実行");
     Professor professorTemp = Professor(
         id: professorSnapshot.id,
         name: professorSnapshot["name"],
         scores: professorSnapshot["scores"].cast<int>());
-    print("ここまで実行2");
     return professorTemp;
   }
 
@@ -83,7 +76,7 @@ class _MyWidget2State extends State<MyWidget2> {
     return tempFile;
   }
 
-  Future<String> Transcription() async {
+  Future<String> transcription() async {
     setState(() {
       isTranscription = true;
     });
@@ -145,14 +138,18 @@ class _MyWidget2State extends State<MyWidget2> {
   }
 
   Future<void> summarize() async {
-    String allText = await Transcription();
+    if (allText == "") {
+      allText = await transcription();
+    }
+    setState(() {
+      allText = allText;
+    });
     print("文字全文： $allText");
     summarizedText = await summary(allText);
     print("要約した文： $summarizedText");
     setState(() {
       summarizedText = summarizedText;
     });
-    saveScore();
   }
 
   Future<void> analyzeAvatar(File avatarImageFile) async {
@@ -240,26 +237,18 @@ class _MyWidget2State extends State<MyWidget2> {
     }
   }
 
-  Future<void> saveScore() async {
-    RegExp regExp = RegExp(r'評価: *(\d)/5');
-    Match? match = regExp.firstMatch(summarizedText);
-    if (match != null) {
-      String? scoreText = match.group(0);
-      print("スコアが見つかりました: $scoreText");
-    } else {
-      print("一致する文がみつかりません");
-    }
-  }
-
   Future<void> fetchProfileAndAvatar(String researcherName) async {
-    const flaskServerUrl = 'http://192.168.224.133:5000';
+    const flaskServerUrl = 'http://172.20.10.2:5000';
     final endpoint = '$flaskServerUrl/get_avatar';
 
     try {
       print('🔗 Flaskサーバーへリクエスト開始: $endpoint');
 
+      print("ここまで実行");
       final uri = Uri.parse('$endpoint?researcher_name=$researcherName');
+      print("ここまで実行");
       final response = await http.get(uri);
+      print("ここまで実行");
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
@@ -399,7 +388,7 @@ class _MyWidget2State extends State<MyWidget2> {
                     ? Text("音声をテキストに変換中……")
                     : const SizedBox.shrink(),
                 isLoading == true
-                    ? Text("テキストを要約中……")
+                    ? Text("テキストを要約/評価中……")
                     : const SizedBox.shrink(),
 
                 Text(
